@@ -7,16 +7,21 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD
     "axios": "^1.7.3",
     "bootstrap": "^5.3.3",
     "concurrently": "^8.2.2",
     "font-awesome": "^4.7.0",
     "jquery": "^3.7.1",
     "popper.js": "^1.16.1",
+=======
+    "bootstrap": "^5.3.3",
+>>>>>>> d3709e6cbfd2e0dade53c4ddb2f09b39f48af687
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
+<<<<<<< HEAD
     "react-router-dom": "^6.26.0",
     "react-scripts": "5.0.1",
     "react-share": "^5.1.0",
@@ -27,6 +32,15 @@
     "server": "node server/server.js",
     "client": "react-scripts start",
     "client-install": "npm install --prefix client",
+=======
+    "react-scripts": "5.0.1",
+    "react-share": "^5.1.0",
+    "save-as": "^0.1.8",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+>>>>>>> d3709e6cbfd2e0dade53c4ddb2f09b39f48af687
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

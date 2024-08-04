@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Routes, Route } from 'react-router-dom';
 
 import { Login } from "./components/Login"
@@ -35,6 +36,17 @@ const App = () => {
         </Routes>
 
       )}
+=======
+import React from 'react';
+import NewsApp from './NewsApp';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+const App = () => {
+  return (
+    <div className="App">
+      <NewsApp />
+>>>>>>> d3709e6cbfd2e0dade53c4ddb2f09b39f48af687
     </div>
   );
 };
