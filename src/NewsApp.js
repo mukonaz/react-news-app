@@ -29,8 +29,8 @@ const NewsApp = () => {
         const response = await fetch(req);
         const data = await response.json();
 
-        setArticles(data.articles);
-        setTotalResults(data.totalResults);
+        setArticles(data.articles || []); // Ensure articles is always an array
+        setTotalResults(data.totalResults || 0);
     };
 
     useEffect(() => {
@@ -88,43 +88,6 @@ const NewsApp = () => {
                         <li className="nav-item">
                             <a className={`nav-link ${view === "bookmarked" ? "active" : ""}`} onClick={() => handleViewChange("bookmarked")} href="#">Bookmarked News</a>
                         </li>
-
-                        <li className="nav-item">
-                            <a
-                                className={`nav-link ${selectedCategory === "sport" ? "active" : ""}`}
-                                onClick={() => setSelectedCategory("sport")}
-                                href="#"
-                            >
-                                Sport
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a
-                                className={`nav-link ${selectedCategory === "gaming" ? "active" : ""}`}
-                                onClick={() => setSelectedCategory("gaming")}
-                                href="#"
-                            >
-                                Gaming
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a
-                                className={`nav-link ${selectedCategory === "politics" ? "active" : ""}`}
-                                onClick={() => setSelectedCategory("politics")}
-                                href="#"
-                            >
-                                politics
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a
-                                className={`nav-link ${selectedCategory === "weather" ? "active" : ""}`}
-                                onClick={() => setSelectedCategory("weather")}
-                                href="#"
-                            >
-                                Weather
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </nav>
@@ -143,7 +106,7 @@ const NewsApp = () => {
                     </div>
 
                     <div className="content row">
-                        {article.map((item, index) => (
+                        {Array.isArray(article) && article.map((item, index) => (
                             <div key={index} className="card my-4 mx-2" style={{ width: '18rem', position: 'relative' }}>
                                 <img height="184" src={item.urlToImage} className="card-img-top" alt="..." />
                                 <div className="card-body">
@@ -208,8 +171,7 @@ const NewsApp = () => {
                                 </div>
                             </div>
                         ))
-                    )
-                }
+                    )}
                 </div>
             ) : null}
         </div>
