@@ -23,7 +23,7 @@ const NewsApp = () => {
 
     const fetchNews = async (page, q) => {
         console.log(`Fetching news for ${q}, page number ${page}....`);
-        const url = `https://newsapi.org/v2/everything?q=${q}&from=2024-10-19&pageSize=20&language=en&page=${page}&sortBy=popularity&apiKey=b3f8d5b146be4afd88811b2737c399be`;
+        const url = `https://newsapi.org/v2/everything?q=${q}&from=2024-10-20&pageSize=20&language=en&page=${page}&sortBy=popularity&apiKey=b3f8d5b146be4afd88811b2737c399be`;
 
         const req = new Request(url);
         const response = await fetch(req);
