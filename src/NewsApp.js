@@ -23,13 +23,13 @@ const NewsApp = () => {
 
     const fetchNews = async (page, q) => {
         console.log(`Fetching news for ${q}, page number ${page}....`);
-        const url = `https://newsapi.org/v2/everything?q=${q}&from=2024-07-20&pageSize=20&language=en&page=${page}&sortBy=popularity&apiKey=//NewsApi`;
+        const url = `https://newsapi.org/v2/everything?q=${q}&from=2024-10-19&pageSize=20&language=en&page=${page}&sortBy=popularity&apiKey=${process.env.REACT_APP_SECRET_KEY}`;
 
         const req = new Request(url);
         const response = await fetch(req);
         const data = await response.json();
 
-        setArticles(data.articles || []); // Ensure articles is always an array
+        setArticles(data.articles || []); 
         setTotalResults(data.totalResults || 0);
     };
 
